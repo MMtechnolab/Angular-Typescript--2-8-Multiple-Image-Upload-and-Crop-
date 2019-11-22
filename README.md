@@ -4,7 +4,11 @@
  I Found all Image Uploader allow  only single file upload and crop,I made some modification to make upload multiple Images to upload and allow user to crop them one by one.
  Using ngx-image-cropper
 
-![example](https://www.autoliv.com/sites/default/files/2019-02/Interior-A-airbags.jpg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MMtechnolab/Angular-Typescript--2-8-Multiple-Image-Upload-and-Crop-/master/src/assets/Image/UplaodedMultipleImages.png" width="350" title="Uploaded Image List ">
+
+  <img src="https://raw.githubusercontent.com/MMtechnolab/Angular-Typescript--2-8-Multiple-Image-Upload-and-Crop-/master/src/assets/Image/ImageCropperModal.png" width="350" title="Selected Image Cropper Modal Popoup">
+</p>
 
 [StackBlitz](https://stackblitz.com/edit/image-cropper)
 
