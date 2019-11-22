@@ -1,0 +1,53 @@
+
+  <div>
+
+    <!--input multiple files-->
+    <input type="file" multiple (change)="fileChangeEvent($event)" />
+    <div style="display:flex;max-width:600px;overflow: auto;">
+      <div *ngFor="let item of ulpoadedFiles" style="margin:5px">
+        <span (click)="cropImage(item.imgId)">
+          <img [src]="item.imgBase64" style="max-width:300px;max-height:100px ;border:2px solid gray" />
+        </span>
+      </div>
+
+    </div>
+    <div class="row" *ngIf="ulpoadedFiles?.length > 0">
+      <button (click)="SaveAllImages()">Save All</button>
+    </div>
+
+    <div *ngIf="finalImageList?.length > 0" style="display:flex;max-width:600px;overflow: auto;">
+      final Image <br />
+      <div *ngFor="let item of finalImageList" style="margin:5px">
+          <img [src]="item" style="max-width:300px;max-height:100px ;border:2px solid gray" />
+      </div>
+
+    </div>
+    <!--popup modal-->
+    <div class="backdrop" [ngStyle]="{'display':display}"></div>
+
+    <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Image Cropper</h4>
+            <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <image-cropper [imageChangedEvent]="imageChangedEvent"
+                           [maintainAspectRatio]="true"
+                           [aspectRatio]="4 / 3"
+                           [resizeToWidth]="128"
+                           format="png"
+                           (imageCropped)="imageCropped($event)"
+                           (imageLoaded)="imageLoaded()"
+                           (cropperReady)="cropperReady()"
+                           (loadImageFailed)="loadImageFailed()" style="max-height:500px"></image-cropper>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="SaveCropedImage()">Save</button>
+            <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
