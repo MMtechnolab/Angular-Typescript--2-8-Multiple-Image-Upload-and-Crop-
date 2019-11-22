@@ -10,7 +10,6 @@
   <img src="https://raw.githubusercontent.com/MMtechnolab/Angular-Typescript--2-8-Multiple-Image-Upload-and-Crop-/master/src/assets/Image/ImageCropperModal.png" width="350" title="Selected Image Cropper Modal Popoup">
 </p>
 
-[StackBlitz](https://stackblitz.com/edit/image-cropper)
 
 ### Installation
 `npm install ngx-image-cropper --save`
@@ -203,6 +202,11 @@ export class HomeComponent implements OnInit {
 
   
   ```
+
+
+[Aslo compaare code and functionality with origional](https://stackblitz.com/edit/image-cropper)
+
+
 
 
 
